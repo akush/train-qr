@@ -10,6 +10,7 @@ export default function ScanQR() {
       <br />
       {data ? null : (
         <QrReader
+          constraints={{ facingMode: "environment" }}
           onResult={(result, error) => {
             if (!!result) {
               setData(result?.text);
