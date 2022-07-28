@@ -1,0 +1,16 @@
+.disclaimer {
+  margin: 16px;
+}
+
+.bookingDetailsContainer {
+  font-family: monospace;
+  font-size: 18px;
+}
+
+@media print {
+  .header,
+  .footer,
+  .print {
+    display: none;
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "formData": [
+    {
+      "name": "start",
+      "label": "Depart from",
+      "type": "text"
+    },
+    {
+      "name": "deboarding",
+      "label": "Going to",
+      "type": "text"
+    },
+    {
+      "name": "class",
+      "label": "Class",
+      "type": "text"
+    },
+    {
+      "name": "quota",
+      "label": "Quota",
+      "type": "text"
+    },
+    {
+      "name": "train",
+      "label": "Train number",
+      "type": "text"
+    },
+    {
+      "name": "date",
+      "label": "Date of Journey",
+      "type": "date"
+    },
+    {
+      "name": "boarding",
+      "label": "Boarding Station",
+      "type": "text"
+    },
+    {
+      "name": "age",
+      "label": "Age",
+      "type": "number"
+    },
+    {
+      "name": "gender",
+      "label": "Gender",
+      "type": "text"
+    },
+    {
+      "name": "mobile",
+      "label": "Mobile",
+      "type": "number"
+    }
+  ],
+  "disclaimers": [
+    "Show QR code at QR Scanner for validation of Ticket at Entry Gate",
+    "This is Paperless Ticket. No need to Take prints",
+    "Prescribed original ID proof is required while travelling along with SMS/ VRM/ ERS otherwise will be treated as without ticket and penalized as per Railway Rules",
+    "Passengers travelling on a fully waitlisted e-ticket will be treated as Ticketless"
+  ]
+}
