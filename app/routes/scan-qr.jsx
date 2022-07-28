@@ -20,7 +20,7 @@ export default function ScanQR() {
             height: 240,
             width: 320,
           }}
-          facingMode="rear"
+          // facingMode="rear"
           onError={(err) => alert(err)}
           onScan={handleScan}
         />
