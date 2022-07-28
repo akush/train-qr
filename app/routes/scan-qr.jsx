@@ -1,40 +1,29 @@
 import { useState } from "react";
-import QrReader from "react-qr-scanner";
+import { QrReader } from "react-qr-reader";
 
 export default function ScanQR() {
-  const [QRData, setQrData] = useState(undefined);
-
-  function handleScan(data) {
-    console.log(JSON.parse(data));
-    setQrData(JSON.parse(data));
-  }
+  const [data, setData] = useState(undefined);
 
   return (
     <div>
       <h2>Scan QR code and get PNR data</h2>
       <br />
-      {QRData ? null : (
+      {data ? null : (
         <QrReader
-          delay={500}
-          style={{
-            height: 240,
-            width: 320,
+          onResult={(result, error) => {
+            if (!!result) {
+              setData(result?.text);
+            }
+
+            if (!!error) {
+              console.info(error);
+            }
           }}
-          // facingMode="rear"
-          onError={(err) => alert(err)}
-          onScan={handleScan}
+          style={{ width: "100%" }}
         />
       )}
-      {QRData && <h3>Ticket Validated Successfully!!! Booking details are - </h3>}
-      {QRData
-        ? Object.keys(QRData).map((e) => {
-            return (
-              <p>
-                {e} - {QRData[e]}
-              </p>
-            );
-          })
-        : null}
+      {data && <h3>Ticket Validated Successfully!!! Booking details are - </h3>}
+      {data ? <p>{data}</p> : null}
     </div>
   );
 }
