@@ -1,0 +1,20 @@
+{
+  "header": "Platform Ticket",
+  "formData": [
+    {
+      "name": "station",
+      "label": "Station Name/Code",
+      "type": "text"
+    },
+    {
+      "name": "NumberOfPax",
+      "label": "No. of Person",
+      "type": "numnber"
+    }
+  ],
+  "disclaimers": [
+    "Ticket is valid for 2 hours from booking time",
+    "Entry is validated through QR code scanner at entry gate",
+    "This id Paperless ticket. No need to take prints"
+  ]
+}

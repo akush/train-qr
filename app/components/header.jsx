@@ -4,9 +4,9 @@ export default function Header() {
   return (
     <nav className="header navbar navbar-expand-lg ">
       <div className="print container-fluid">
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" to="/">
           IRCTC
-        </a>
+        </Link>
         <button
           className="print navbar-toggler"
           type="button"
@@ -31,14 +31,14 @@ export default function Header() {
               </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link to="/unreserved" className="nav-link">
                 Unreserved Booking
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link to="/platform" className="nav-link">
                 Platform Booking
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
