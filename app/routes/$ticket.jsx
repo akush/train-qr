@@ -1,5 +1,6 @@
 import { json } from "@remix-run/node";
-import { Form, useLoaderData } from "@remix-run/react";
+import { Form, useLoaderData, useActionData } from "@remix-run/react";
+import { QRCodeSVG } from "qrcode.react";
 
 import reservedConfig from "../../config/reserved.json";
 import platformConfig from "../../config/platform.json";
@@ -11,17 +12,55 @@ export const loader = async ({ params }) => {
     platform: platformConfig,
     unreserved: unreservedConfig,
   };
-  // console.log("ticket type", params.ticket);
   return json({ config: config[params.ticket] });
 };
 
+export async function action({ request }) {
+  const body = await request.formData();
+  const { disclaimers, title, ...values } = Object.fromEntries(body);
+  return json({ disclaimers, title, values });
+}
+
 export default function Ticket() {
   const { config } = useLoaderData();
+  const data = useActionData();
+
   if (!config?.header) {
     return <>Not found</>;
   }
+
+  if (data?.title) {
+    return (
+      <div className="bookingDetailsContainer">
+        <a href="" onClick={print} className="print">
+          Print
+        </a>
+        <h2>{data.title}</h2>
+        <p>Your Ticket is Booked Successfully !!!</p>
+
+        <QRCodeSVG value={JSON.stringify(data.values)} includeMargin={true} size={256} />
+
+        <h3>Booking Details</h3>
+        {Object.keys(data.values).map((e) => {
+          return (
+            <p className="journeyDetails" key={e}>
+              {e} - {data.values[e]}
+            </p>
+          );
+        })}
+
+        {data.disclaimers ? <h3 className="disclaimer">Disclaimers</h3> : null}
+        <ul className="disclaimer">
+          {data.disclaimers?.split("~")?.map((e) => {
+            return <li>{e}</li>;
+          })}
+        </ul>
+      </div>
+    );
+  }
+
   return (
-    <Form method="post" action="/create-qr" className="row g-3">
+    <Form method="post" className="row g-3">
       <h1>{config.header}</h1>
 
       {config.formData.map((data) => (
