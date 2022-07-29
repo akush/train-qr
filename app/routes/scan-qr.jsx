@@ -4,16 +4,6 @@ import { QrReader } from "react-qr-reader";
 export default function ScanQR() {
   const [data, setData] = useState(undefined);
 
-  const setQRData = (text) => {
-    if (!text) return;
-    try {
-      const d = JSON.parse(text);
-      setData(d);
-    } catch (e) {
-      setData({ text });
-    }
-  };
-
   return (
     <div>
       <h2>Scan QR code and get PNR data</h2>
@@ -23,7 +13,7 @@ export default function ScanQR() {
           constraints={{ facingMode: "environment" }}
           onResult={(result, error) => {
             if (!!result) {
-              setQRData(result?.text);
+              setData(result?.text);
             }
 
             if (!!error) {
