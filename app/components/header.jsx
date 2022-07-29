@@ -5,7 +5,7 @@ export default function Header() {
     <nav className="header navbar navbar-expand-lg ">
       <div className="print container-fluid">
         <Link className="navbar-brand" to="/">
-          IRCTC
+          Home
         </Link>
         <button
           className="print navbar-toggler"
