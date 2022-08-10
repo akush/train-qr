@@ -5,7 +5,7 @@ export default function ScanQR() {
   const [data, setData] = useState(undefined);
 
   return (
-    <div>
+    <div className="h-100 p-5 mb-4 bg-light border rounded-3 text-center">
       <h2>Scan QR code and get PNR data</h2>
       <br />
       {data ? null : (

@@ -2,7 +2,7 @@ import { Link } from "@remix-run/react";
 
 export default function Header() {
   return (
-    <nav className="header navbar navbar-expand-lg ">
+    <nav className="header navbar navbar-expand-lg mb-4">
       <div className="print container-fluid">
         <Link className="navbar-brand" to="/">
           Home
@@ -20,22 +20,22 @@ export default function Header() {
         </button>
         <div className="print collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav d-flex">
-            <li className="nav-item">
+            <li className="nav-item rounded-3 bg-white">
               <Link to="/scan-qr" className="nav-link">
                 Scan QR Code
               </Link>
             </li>
-            <li className="nav-item">
+            <li className="nav-item rounded-3 bg-white">
               <Link to="/reserved" className="nav-link">
                 Reserved Booking
               </Link>
             </li>
-            <li className="nav-item">
+            <li className="nav-item rounded-3 bg-white">
               <Link to="/unreserved" className="nav-link">
                 Unreserved Booking
               </Link>
             </li>
-            <li className="nav-item">
+            <li className="nav-item rounded-3 bg-white">
               <Link to="/platform" className="nav-link">
                 Platform Booking
               </Link>

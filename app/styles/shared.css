@@ -1,10 +1,35 @@
+body {
+  background-image: url('/WAP-4_Class_locomotive_of_Indian_Railways.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+a {
+  text-decoration: none !important;
+  color: var(--bs-card-color) !important;
+}
+
+.nav-item {
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  padding: 4px;
+  text-align: center;
+}
+
+.footer {
+  color: white !important;
+}
+
 .disclaimer {
   margin: 16px;
+  text-align: left;
 }
 
 .bookingDetailsContainer {
   font-family: monospace;
   font-size: 18px;
+  text-align: center;
 }
 
 @media print {
@@ -12,5 +37,18 @@
   .footer,
   .print {
     display: none;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 720px !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 720px !important;
   }
 }

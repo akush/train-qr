@@ -31,7 +31,7 @@ export default function Ticket() {
 
   if (data?.title) {
     return (
-      <div className="bookingDetailsContainer">
+      <div className="bookingDetailsContainer h-100 p-5 mb-4 bg-light border rounded-3">
         <a href="" onClick={print} className="print">
           Print
         </a>
@@ -60,7 +60,7 @@ export default function Ticket() {
   }
 
   return (
-    <Form method="post" className="row g-3">
+    <Form method="post" className="container-fluid row g-3 h-100 p-5 mb-4 bg-light border rounded-3">
       <h1>{config.header}</h1>
 
       {config.formData.map((data) => (
@@ -75,7 +75,7 @@ export default function Ticket() {
       <input type="hidden" name="title" value={config.header} />
       <input type="hidden" name="disclaimers" value={config.disclaimers.join("~")} />
 
-      <div className="col-auto">
+      <div className="col-md-12 text-center">
         <button type="submit" className="btn btn-primary mb-3">
           Submit
         </button>

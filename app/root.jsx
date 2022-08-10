@@ -29,10 +29,10 @@ export default function App() {
 
       <body>
         <div className="container">
-          {/* <Header /> */}
+          <Header />
 
           <Outlet />
-          <footer className="footer pt-3 mt-4 text-muted border-top">© 2022</footer>
+          <footer className="footer pt-3 mt-4 border-top">© 2022</footer>
         </div>
 
         <ScrollRestoration />
