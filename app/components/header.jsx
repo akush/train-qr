@@ -20,11 +20,11 @@ export default function Header() {
         </button>
         <div className="print collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav d-flex">
-            <li className="nav-item rounded-3 bg-white">
+            {/* <li className="nav-item rounded-3 bg-white">
               <Link to="/scan-qr" className="nav-link">
                 Scan QR Code
               </Link>
-            </li>
+            </li> */}
             <li className="nav-item rounded-3 bg-white">
               <Link to="/reserved" className="nav-link">
                 Reserved Booking
