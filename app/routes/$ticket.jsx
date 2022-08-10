@@ -32,9 +32,9 @@ export default function Ticket() {
   if (data?.title) {
     return (
       <div className="bookingDetailsContainer h-100 p-5 mb-4 bg-light border rounded-3">
-        <a href="" onClick={print} className="print">
+        {/* <a href="" onClick={print} className="print">
           Print
-        </a>
+        </a> */}
         <h2>{data.title}</h2>
         <p>Your Ticket is Booked Successfully !!!</p>
 
